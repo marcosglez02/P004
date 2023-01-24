@@ -23,9 +23,9 @@ function cargarDatos(){
                 <th class="text-center" scope="row">${dato.albumId}</th>
                 <td class="text-center">${dato.id}</td>
                 <td class="text-center">${dato.title}</td>
-                <td class="text-center"><a href="${dato.url}"><img src="${dato.thumbnailUrl} alt=""></a></td>
+                <td class="text-center"><a href="${dato.url}"><img src="${dato.thumbnailUrl}" alt=""></a></td>
             </tr>`
-            if(dato.id == 10){
+            if(dato.id == 30){
                 break;
             }
             }
@@ -36,4 +36,9 @@ function cargarDatos(){
     http.send();
 
 }
+function limpiar(){
+    let limpiar = document.getElementById('respuesta');
+    limpiar.innerHTML="";
+}
 document.getElementById("btnCargar").addEventListener("click", function(){cargarDatos()});
+document.getElementById("btnLimpiar").addEventListener("click", function(){limpiar()})
