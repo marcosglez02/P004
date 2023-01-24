@@ -22,9 +22,12 @@ function cargarDatos(){
                 res.innerHTML += `<tr">
                 <th class="text-center" scope="row">${dato.albumId}</th>
                 <td class="text-center">${dato.id}</td>
-                <td class="text-justify">${dato.title}</td>
-                <td><img src="${dato.thumbnailUrl}"></td>
+                <td class="text-center">${dato.title}</td>
+                <td class="text-center"><a href="${dato.url}"><img src="${dato.thumbnailUrl} alt=""></a></td>
             </tr>`
+            if(dato.id == 10){
+                break;
+            }
             }
         }
     
