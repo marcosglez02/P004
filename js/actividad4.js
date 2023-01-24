@@ -7,14 +7,24 @@ function cargarDatos(){
         if(this.readyState == 4 && this.status == 200){
             console.log(this.responseText);
             let res = document.getElementById('respuesta');
-            res.innerHTML = "";
+            res.innerHTML = `<thead><tr>
+            <th scope="col" width="10%" class="text-center">AlbumId</th>
+            <th scope="col" width="10%" class="text-center">id</th>
+            <th scope="col" width="40%" class="text-center">titulo</th>
+            <th scope="col" width="40%" class="text-center">imagen</th>
+            </tr></thead><tbody></tbody`;
 
             // Convertir el formato JSON para hacer objetos
             const json =JSON.parse(this.responseText);
 
             // Mostrar los datos del json
             for(const dato of json){
-                res.innerHTML += dato.albumId + " " + dato.id + " " + dato.title + " " + dato.url + " " + dato.thumbnailUrl + "<br>";
+                res.innerHTML += `<tr">
+                <th class="text-center" scope="row">${dato.albumId}</th>
+                <td class="text-center">${dato.id}</td>
+                <td class="text-justify">${dato.title}</td>
+                <td><img src="${dato.thumbnailUrl}"></td>
+            </tr>`
             }
         }
     
