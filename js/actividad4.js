@@ -25,7 +25,7 @@ function cargarDatos(){
                 <td class="text-center">${dato.title}</td>
                 <td class="text-center"><a href="${dato.url}"><img src="${dato.thumbnailUrl}" alt=""></a></td>
             </tr>`
-            if(dato.id == 30){
+            if(dato.id == 100){
                 break;
             }
             }
